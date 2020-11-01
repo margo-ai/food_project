@@ -18,6 +18,8 @@
   "homepage": "https://github.com/margo-ai/food_project#readme",
   "dependencies": {},
   "devDependencies": {
-    "json-server": "^0.16.2"
+    "json-server": "^0.16.2",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
   }
 }
