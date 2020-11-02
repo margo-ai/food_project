@@ -1,64 +1,20 @@
-function slider() {
+function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field}) {
   
  // Slider
 
- const slides = document.querySelectorAll('.offer__slide');
- const slider = document.querySelector('.offer__slider');
- const prev = document.querySelector('.offer__slider-prev');
- const next = document.querySelector('.offer__slider-next');
- const total = document.querySelector('#total');
- const current = document.querySelector('#current');
- let slideIndex = 1; // для первого варианта
+ let slideIndex = 1; 
+ let offset = 0; 
 
- const slidesWrapper = document.querySelector('.offer__slider-wrapper');
- const slidesField = document.querySelector('.offer__slider-inner');
+ const slides = document.querySelectorAll(slide);
+ const slider = document.querySelector(container);
+ const prev = document.querySelector(prevArrow);
+ const next = document.querySelector(nextArrow);
+ const total = document.querySelector(totalCounter);
+ const current = document.querySelector(currentCounter);
+ const slidesWrapper = document.querySelector(wrapper);
  const width = window.getComputedStyle(slidesWrapper).width;
- let offset = 0; // для второго варианта, чтобы измерять количество слайдов и текущий слайд
-
-
- // Первый вариант слайда - ручной
- // showSlides(slideIndex);
-
- // if (slides.length < 10) {
- //     total.textContent = `0${slides.length}`;
- // } else {
- //     total.textContent = slides.length;
- // }
-
- // function showSlides(n) {
- //     if (n > slides.length) {
- //         slideIndex = 1;
- //     }
- //     if (n < 1) {
- //         slideIndex = slides.length;
- //     }
-
- //     slides.forEach(item => item.style.display = 'none');
-
- //     slides[slideIndex - 1].style.display = 'block';
-
- //     if (slides.length < 10) {
- //         current.textContent = `0${slideIndex}`;
- //     } else {
- //         current.textContent = slideIndex;
- //     }
- // }
-
- // function plusSlides(n) {
- //     showSlides(slideIndex += n);
- // }
-
- // prev.addEventListener('click', () => {
- //     plusSlides(-1);
- // });
-
- // next.addEventListener('click', () => {
- //     plusSlides(1);
- // });
-
-
-
- // Второй вариант слайда - библиотека Slick
+ const slidesField = document.querySelector(field);
+ 
 
  if (slides.length < 10) {
      total.textContent = `0${slides.length}`;
@@ -201,4 +157,4 @@ function slider() {
 
 }
 
-module.exports = slider;
+export default slider;
